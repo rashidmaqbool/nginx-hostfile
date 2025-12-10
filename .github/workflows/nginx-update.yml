@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASS }}
           source: "nginx.conf"
-          target: "/root/docker-demo/nginx/"
+          target: "/home/rashid/docker-demo/nginx/"
 
       - name: Restart Nginx container
         uses: appleboy/ssh-action@master
@@ -29,5 +29,5 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASS }}
           script: |
-            cd /root/docker-demo/nginx
+            cd /home/rashid/docker-demo/nginx
             docker restart nginx
